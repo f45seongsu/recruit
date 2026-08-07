@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>F45 성수점 코치 채용</title>
+<meta name="description" content="F45 성수점 오전 클래스 프리랜서 코치 채용 - 그룹트레이닝 코칭 경력자 우대">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Bebas+Neue&family=Pretendard:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#152151;
+    --navy-deep:#0a1028;
+    --red:#D6001C;
+    --white:#ffffff;
+    --off:#dde3f0;
+    --paper:#f6f5f1;
+    --fn:"Barlow Condensed", sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Pretendard', -apple-system, sans-serif;
+    color:var(--navy);
+    background:var(--paper);
+    line-height:1.65;
+    font-size:17px;
+  }
+  img{display:block; width:100%; height:100%; object-fit:cover;}
+  a{text-decoration:none; color:inherit;}
+  .wrap{max-width:720px; margin:0 auto;}
+
+  /* ===== NAV ===== */
+  .nav{
+    position:sticky; top:0; z-index:50;
+    background:var(--navy);
+    border-bottom:3px solid var(--red);
+  }
+  .nav-inner{
+    max-width:720px; margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    gap:16px;
+    padding:14px 20px;
+  }
+  .nav-logo{height:34px; width:auto; flex-shrink:1; min-width:0;}
+  .nav-cta{
+    background:var(--red); color:var(--white);
+    font-weight:800; font-size:15px;
+    padding:11px 20px; border-radius:6px;
+    letter-spacing:0.02em;
+    white-space:nowrap;
+    flex-shrink:0;
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    height:92vh; min-height:560px; max-height:820px;
+    overflow:hidden;
+  }
+  .hero-img{position:absolute; inset:0;}
+  .hero-img img{object-position:center 30%;}
+  .hero-grad-b{
+    position:absolute; inset:0;
+    background:linear-gradient(to top, var(--navy-deep) 5%, rgba(10,16,40,0.55) 42%, transparent 68%);
+  }
+  .hero-grad-t{
+    position:absolute; inset:0;
+    background:linear-gradient(to bottom, rgba(10,16,40,0.55) 0%, transparent 22%);
+  }
+  .hero-content{
+    position:absolute; left:0; right:0; bottom:0;
+    padding:0 24px 44px;
+    text-align:center;
+  }
+  .hero-eyebrow{
+    color:#ff9a9a; font-weight:700; font-size:16px;
+    letter-spacing:0.06em; margin-bottom:16px;
+  }
+  .hero-now{
+    font-family:'Bebas Neue', sans-serif;
+    color:var(--red);
+    font-weight:400;
+    font-size:clamp(64px, 17vw, 128px);
+    line-height:0.9;
+    letter-spacing:0.015em;
+  }
+  .hero-sub{
+    color:var(--white);
+    font-weight:800;
+    font-size:clamp(24px, 5.5vw, 36px);
+    margin-top:12px;
+  }
+  .hero-tag{
+    display:inline-block;
+    margin-top:20px;
+    border:1px solid var(--off); color:var(--off);
+    font-size:14.5px; font-weight:600;
+    padding:9px 20px; border-radius:20px;
+  }
+  .hero-btn{
+    display:block;
+    margin:28px auto 0;
+    max-width:420px;
+    background:var(--white); color:var(--navy);
+    font-weight:800; font-size:18px;
+    padding:19px; border-radius:10px;
+    box-shadow:0 10px 24px rgba(0,0,0,0.25);
+  }
+
+  /* ===== SECTION 공통 ===== */
+  .section{padding:64px 24px;}
+  .section-inner{max-width:720px; margin:0 auto;}
+  .tag-label{
+    display:inline-block;
+    background:var(--navy); color:var(--white);
+    font-size:13px; font-weight:800; letter-spacing:0.1em;
+    padding:6px 12px; margin-bottom:16px;
+  }
+  .section-title{
+    font-size:30px; font-weight:900; color:var(--navy);
+    margin-bottom:22px; line-height:1.35;
+  }
+  .section-title span{color:var(--red);}
+
+  /* ===== ABOUT ===== */
+  .about{background:var(--white);}
+  .about-photo{
+    border-radius:14px; overflow:hidden;
+    aspect-ratio:4/3; margin-bottom:28px;
+    box-shadow:0 20px 40px -12px rgba(21,33,81,0.25);
+  }
+  .about-text p{color:#4b5468; font-size:17px; margin-bottom:12px;}
+  .about-text strong{color:var(--navy);}
+
+  /* ===== 담당업무/코칭 ===== */
+  .duty{background:var(--paper);}
+  .duty-grid{
+    display:grid; grid-template-columns: 1.1fr 1fr; gap:28px;
+    align-items:center;
+  }
+  .duty-photo{
+    border-radius:14px; overflow:hidden; aspect-ratio:3/4;
+    box-shadow:0 20px 40px -12px rgba(21,33,81,0.2);
+  }
+  .duty-list{list-style:none;}
+  .duty-list li{
+    display:flex; gap:14px;
+    padding:16px 0; border-bottom:1px dashed #ddd7c8;
+    font-size:16.5px; color:#3a4258;
+  }
+  .duty-list li:last-child{border-bottom:none;}
+  .duty-num{
+    color:var(--red); font-weight:900; font-size:15px; flex-shrink:0;
+  }
+
+  /* ===== 자격요건/근무조건 ===== */
+  .req{background:var(--white);}
+  .req-photo{
+    border-radius:14px; overflow:hidden; aspect-ratio:16/9;
+    margin-bottom:28px;
+    box-shadow:0 20px 40px -12px rgba(21,33,81,0.25);
+  }
+  .req-card{
+    background:var(--navy); color:var(--white);
+    border-radius:14px; padding:28px 26px; margin-bottom:16px;
+  }
+  .req-card-title{
+    font-size:14px; font-weight:800; color:#ff9a9a;
+    letter-spacing:0.06em; margin-bottom:18px;
+  }
+  .req-row{
+    display:flex; justify-content:space-between; align-items:baseline;
+    padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.14);
+    font-size:16px;
+  }
+  .req-row:last-child{border-bottom:none;}
+  .req-row b{font-size:19px; font-weight:800;}
+  .req-row span{color:#a9b2cc; font-size:13.5px;}
+  .req-note{
+    margin-top:16px; font-size:13px; color:rgba(255,255,255,0.6);
+  }
+  .must-card{
+    background:var(--red); color:var(--white);
+    border-radius:14px; padding:24px 26px;
+    display:flex; align-items:center; gap:16px;
+  }
+  .must-badge{
+    background:var(--white); color:var(--red);
+    font-weight:900; font-size:13px;
+    padding:5px 10px; border-radius:6px; flex-shrink:0;
+  }
+  .must-text{font-size:17px; font-weight:700; line-height:1.55;}
+
+  .pref-list{margin-top:26px;}
+  .pref-list li{
+    padding:14px 0 14px 28px; position:relative;
+    font-size:16.5px; color:#3a4258;
+    border-bottom:1px solid #e9e5d8;
+  }
+  .pref-list li:last-child{border-bottom:none;}
+  .pref-list li::before{
+    content:"+"; position:absolute; left:0; top:12px;
+    color:var(--red); font-weight:900;
+  }
+
+  /* ===== 혜택 ===== */
+  .benefit{background:var(--paper); position:relative;}
+  .benefit-photo{
+    border-radius:14px; overflow:hidden; aspect-ratio:16/10;
+    margin-bottom:28px;
+    box-shadow:0 20px 40px -12px rgba(21,33,81,0.2);
+  }
+  .benefit-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:14px;
+  }
+  .benefit-card{
+    background:var(--white); border:1px solid #e7e3d6;
+    border-radius:12px; padding:22px 20px;
+  }
+  .benefit-card b{
+    display:block; color:var(--navy); font-size:17px; margin-bottom:7px;
+  }
+  .benefit-card span{color:#6b7280; font-size:14px;}
+
+  /* ===== 지원 폼 ===== */
+  .apply{
+    background:var(--navy-deep); color:var(--white);
+    padding:64px 20px 80px;
+  }
+  .apply .section-inner{text-align:center;}
+  .apply-title{
+    font-size:32px; font-weight:900; margin-bottom:12px;
+  }
+  .apply-title span{color:var(--red);}
+  .apply-sub{
+    color:#a9b2cc; font-size:16px; margin-bottom:36px;
+  }
+  .form-frame-wrap{
+    background:var(--white);
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.5);
+  }
+  .form-frame-wrap iframe{
+    width:100%;
+    height:1861px;
+    border:none;
+    display:block;
+  }
+
+  /* ===== FOOTER ===== */
+  .foot{
+    background:var(--navy-deep); color:#7b84a3;
+    text-align:center; padding:24px 20px 40px;
+    font-size:13px; letter-spacing:0.06em;
+  }
+
+  /* ===== 브랜드 스트라이프 / 디바이더 ===== */
+  .brand-stripe{
+    width:100%; height:6px;
+    background:repeating-linear-gradient(90deg, var(--navy) 0, var(--navy) 50%, var(--red) 50%, var(--red) 100%);
+    background-size:100px 6px;
+  }
+  .stripe-div{
+    width:100%; height:5px;
+    background:repeating-linear-gradient(90deg, var(--navy) 0, var(--navy) 50%, var(--red) 50%, var(--red) 100%);
+    background-size:70px 5px;
+  }
+
+  /* tag-label / eyebrow : 브랜드 영문 서체 */
+  .tag-label{font-family:var(--fn); letter-spacing:0.14em;}
+  .hero-eyebrow{font-family:var(--fn); font-weight:800; letter-spacing:0.1em; text-transform:uppercase;}
+  .req-card-title{font-family:var(--fn); letter-spacing:0.1em;}
+
+  /* ===== 마퀴 배너 ===== */
+  .mq-wrap{
+    background:var(--navy); overflow:hidden;
+    padding:16px 0; border-top:2px solid var(--red); border-bottom:2px solid var(--red);
+  }
+  .mq-track{display:flex; white-space:nowrap; animation:mqScroll 14s linear infinite; width:max-content;}
+  .mq-word{
+    font-family:var(--fn); font-size:clamp(20px,5vw,32px); font-weight:800;
+    letter-spacing:0.06em; text-transform:uppercase; color:var(--white);
+    padding:0 22px; display:inline-flex; align-items:center; gap:18px;
+  }
+  .mq-star{color:var(--red); font-size:0.7em;}
+  @keyframes mqScroll{from{transform:translateX(0)} to{transform:translateX(-50%)}}
+
+  /* ===== 위치 섹션 ===== */
+  .loc{background:var(--navy);}
+  .loc .tag-label{background:var(--red);}
+  .loc-title{color:var(--white);}
+  .loc-title span{color:#ff9a9a;}
+  .loc-card{
+    background:var(--white); border-radius:16px; overflow:hidden;
+    margin-top:8px; border-top:5px solid var(--red);
+  }
+  .loc-map{width:100%; aspect-ratio:16/9; background:var(--off); overflow:hidden;}
+  .loc-info{padding:26px 26px 28px;}
+  .loc-addr{font-size:19px; font-weight:800; color:var(--navy); line-height:1.4; margin-bottom:8px;}
+  .loc-access{font-size:15px; font-weight:600; color:#6b7280; margin-bottom:16px;}
+  .loc-badge{
+    display:inline-block; font-size:13.5px; font-weight:700; color:var(--navy);
+    background:var(--paper); padding:9px 16px; border-radius:10px;
+  }
+
+  /* ===== fade up ===== */
+  .fu{opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease;}
+  .fu.vis{opacity:1; transform:translateY(0);}
+
+  /* ===== 하단 고정 CTA ===== */
+  .sticky-cta{
+    position:fixed; left:0; bottom:-120px; width:100%;
+    background:rgba(255,255,255,0.97); backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    padding:14px 20px; padding-bottom:max(14px, env(safe-area-inset-bottom));
+    display:flex; align-items:center; justify-content:space-between; gap:14px;
+    box-shadow:0 -8px 28px rgba(21,33,81,0.15);
+    border-top:2px solid var(--off);
+    z-index:1000; transition:bottom .35s cubic-bezier(.175,.885,.32,1.275);
+  }
+  .sticky-cta.show{bottom:0;}
+  .sticky-info{display:flex; flex-direction:column; gap:2px;}
+  .sticky-name{font-size:13px; font-weight:700; color:#6b7280;}
+  .sticky-sub{font-family:var(--fn); font-size:22px; font-weight:800; color:var(--red); letter-spacing:0.02em;}
+  .sticky-btn{
+    background:var(--navy); color:var(--white); font-weight:800; font-size:15px;
+    padding:13px 22px; border-radius:40px; white-space:nowrap; flex-shrink:0;
+  }
+
+  @media (max-width:560px){
+    .duty-grid{grid-template-columns:1fr;}
+    .duty-photo{aspect-ratio:16/10;}
+    .benefit-grid{grid-template-columns:1fr;}
+    .section{padding:48px 20px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="brand-stripe"></div>
+
+<!-- NAV -->
+<div class="nav">
+  <div class="nav-inner">
+    <img class="nav-logo" src="45-logo.png" alt="F45 성수">
+    <a class="nav-cta" href="#apply">지원하기</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-img"><img src="DSC01070.jpg" alt="F45 성수점 코치와 회원"></div>
+  <div class="hero-grad-t"></div>
+  <div class="hero-grad-b"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">F45 성수점 · 프리랜서 코치</div>
+    <div class="hero-now">NOW HIRING</div>
+    <div class="hero-sub">오전 클래스 코치</div>
+    <div class="hero-tag">그룹트레이닝 코칭 경력자 우대</div>
+    <a class="hero-btn" href="#apply">지금 지원하기 →</a>
+  </div>
+</section>
+
+<!-- 마퀴 배너 -->
+<div class="mq-wrap">
+  <div class="mq-track" id="mqTrack"></div>
+</div>
+
+<!-- ABOUT -->
+<section class="section about">
+  <div class="section-inner fu">
+    <div class="about-photo"><img src="DSC09452.jpg" alt="F45 브랜드 소개"></div>
+    <div class="tag-label">ABOUT F45</div>
+    <h2 class="section-title">TEAM TRAINING,<br><span>LIFE CHANGING</span></h2>
+    <div class="about-text">
+      <p>F45의 <strong>'F'는 Functional(기능성) 트레이닝</strong>을, <strong>'45'는 45분간 진행되는 고강도 인터벌 운동</strong>을 의미합니다.</p>
+      <p>전 세계 트레이너들이 함께 만들어가는 글로벌 피트니스 커뮤니티, F45 성수점에서 오전 클래스를 이끌어주실 코치님을 찾습니다.</p>
+    </div>
+  </div>
+</section>
+
+<div class="stripe-div"></div>
+
+<!-- 담당업무 -->
+<section class="section duty">
+  <div class="section-inner fu">
+    <div class="tag-label">WHAT YOU'LL DO</div>
+    <h2 class="section-title">담당업무</h2>
+    <div class="duty-grid">
+      <div class="duty-photo"><img src="DSC09850.jpg" alt="코칭 장면"></div>
+      <ul class="duty-list">
+        <li><span class="duty-num">01</span>45분 F45 그룹 트레이닝 코칭 및 동기부여</li>
+        <li><span class="duty-num">02</span>회원 자세 지도 및 부상 방지</li>
+        <li><span class="duty-num">03</span>긍정적인 스튜디오 분위기 조성</li>
+        <li><span class="duty-num">04</span>클래스 전후 기구 세팅 및 정리</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="stripe-div"></div>
+
+<!-- 자격요건 / 근무조건 -->
+<section class="section req">
+  <div class="section-inner">
+    <div class="req-photo"><img src="DSC01709.jpg" alt="그룹트레이닝 액션 컷"></div>
+
+    <div class="tag-label">REQUIREMENTS</div>
+    <h2 class="section-title">이런 분을 찾습니다</h2>
+
+    <div class="must-card">
+      <div class="must-text">그룹트레이닝(GX) 코칭 경력을 보유하셨거나,<br>새롭게 도전해보고 싶으신 분</div>
+    </div>
+
+    <ul class="pref-list">
+      <li>생활체육지도자 및 피트니스 관련 자격증 보유자 우대</li>
+      <li>체육/스포츠과학 등 운동 관련 전공자 우대</li>
+      <li>크로스핏(CrossFit) 또는 하이록스(HYROX) 유경험자 우대</li>
+      <li>성수점 인근 거주자 우대</li>
+    </ul>
+
+    <div class="req-card" style="margin-top:32px;">
+      <div class="req-card-title">CLASS SCHEDULE</div>
+      <div class="req-row"><b>오전</b><span>07:00 · 08:00 · 09:00 · 12:00</span></div>
+      <div class="req-row"><b>저녁</b><span>18:30 · 19:30 · 20:30</span></div>
+      <div class="req-row"><b>토요일</b><span>09:00 · 10:00 · 11:00</span></div>
+      <div class="req-note">※ 가능하신 타임대에 맞춰 스케줄 협의 · 클래스페이 협의</div>
+    </div>
+  </div>
+</section>
+
+<div class="stripe-div"></div>
+
+<!-- 혜택 -->
+<section class="section benefit">
+  <div class="section-inner fu">
+    <div class="benefit-photo"><img src="DSC01232.jpg" alt="F45 성수 커뮤니티"></div>
+    <div class="tag-label">BENEFITS</div>
+    <h2 class="section-title">성수점 코치 특별 혜택</h2>
+    <div class="benefit-grid">
+      <div class="benefit-card">
+        <b>무제한 수강</b>
+        <span>F45 성수점 본인 회원권 무료 제공</span>
+      </div>
+      <div class="benefit-card">
+        <b>유니폼 지급</b>
+        <span>코치 전용 유니폼 무료 제공</span>
+      </div>
+      <div class="benefit-card">
+        <b>교육 지원</b>
+        <span>F45 글로벌 코칭 시스템 교육</span>
+      </div>
+      <div class="benefit-card">
+        <b>성장 환경</b>
+        <span>활기찬 커뮤니티, 유연한 스케줄</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stripe-div"></div>
+
+<!-- 위치 -->
+<section class="section loc">
+  <div class="section-inner fu">
+    <div class="tag-label">LOCATION</div>
+    <h2 class="section-title loc-title">근무지 안내</h2>
+    <div class="loc-card">
+      <div class="loc-map"><img src="map.png" alt="F45 성수 위치"></div>
+      <div class="loc-info">
+        <div class="loc-addr">서울 성동구 아차산로 92<br>(성수동2가, STOWER) 지하 1층 102호</div>
+        <div class="loc-access">지하철 2호선 성수역 4번 출구 도보 30초</div>
+        <span class="loc-badge">F45 SEONGSU</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 지원 폼 -->
+<section class="apply" id="apply">
+  <div class="section-inner fu">
+    <div class="apply-title">지금, <span>F45 성수</span>와<br>함께하세요</div>
+    <div class="apply-sub">아래 양식을 작성해주시면 확인 후 빠르게 연락드리겠습니다.</div>
+    <div class="form-frame-wrap">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdeZlJeNWQbFb6k_nT8qWVJrKnTm6hX1Q4XtqqD6GqQrc6w4w/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">로드 중…</iframe>
+    </div>
+  </div>
+</section>
+
+<div class="brand-stripe"></div>
+<div class="foot">F45 SEONGSU · TEAM TRAINING ★ LIFE CHANGING</div>
+
+<!-- 하단 고정 CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-info">
+    <span class="sticky-name">F45 성수점 코치 채용</span>
+    <span class="sticky-sub">NOW HIRING</span>
+  </div>
+  <a class="sticky-btn" href="#apply">지원하기</a>
+</div>
+
+<script>
+/* 마퀴 텍스트 */
+(function(){
+  var words = ["F45 SEONGSU","NOW HIRING","F45 SEONGSU","NOW HIRING","F45 SEONGSU","NOW HIRING","F45 SEONGSU","NOW HIRING"];
+  var el = document.getElementById("mqTrack");
+  var h = "";
+  for(var p=0;p<2;p++){
+    words.forEach(function(w){ h += '<span class="mq-word">'+w+' <span class="mq-star">★</span></span>'; });
+  }
+  el.innerHTML = h;
+})();
+
+/* fade-up 스크롤 등장 */
+var obs = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){ e.target.classList.add("vis"); obs.unobserve(e.target); }
+  });
+}, {threshold:0.08, rootMargin:"0px 0px -30px 0px"});
+document.querySelectorAll(".fu").forEach(function(el){ obs.observe(el); });
+
+/* 하단 고정 CTA: 히어로 지나면 노출 */
+var hero = document.querySelector(".hero");
+var sc = document.getElementById("stickyCta");
+window.addEventListener("scroll", function(){
+  sc.classList.toggle("show", hero.getBoundingClientRect().bottom < 0);
+}, {passive:true});
+</script>
+
+</body>
+</html>
